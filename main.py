@@ -1,8 +1,10 @@
 import tkinter as tk
 import random
+from tkinter import Tk
 
 # Zoznam slov
 words = ["jablko", "strom", "rieka", "auto", "dom", "pes", "mačka", "slovensko", "práca", "škola", "hra", "hudba"]
+
 
 def generate_sentences():
     sentences = []
@@ -13,21 +15,39 @@ def generate_sentences():
         sentences.append(sentence)
     result_text.set("\n".join(sentences))  # Zobrazenie viet v GUI
 
+
 # Vytvorenie GUI
 root = tk.Tk()
 root.title("Generátor viet")
-root.geometry("400x300")
+root.geometry("600x500")
 
 # Popis
-description = tk.Label(root, text="Klikni na tlačidlo pre generovanie viet:", font=("Arial", 12))
+scription = tk.Label(root, text="Programovacie techniky", font=("Arial", 12))
+description.pack(pady=10)
+
+description = tk.Label(root, text="Matej Hric", font=("Arial", 12))
+description.pack(pady=10)
+
+description = tk.Label(root, text="Zadanie úlohy: Vytvorte pole 12 ľubovoľných slov,", font=("Arial", 12))
+description.pack(pady=10)
+
+description = tk.Label(root, text="vytvorte 5 náhodných polí z existujúceho zoznamu (rôzne náhodné dĺžky)",
+                       font=("Arial", 12))
+description.pack(pady=10)
+
+description = tk.Label(root, text="a vypíšte ich ako vety z medzerami, začínajúce slovo nech sa začína",
+                       font=("Arial", 12))
+description.pack(pady=10)
+
+description = tk.Label(root, text="veľkým písmenom a veta nech končí bodkou.", font=("Arial", 12))
+description.pack(pady=10)
+
+description = tk.Label(root, text="Kliknite na tlačidlo pre spustenie.", font=("Arial", 12))
 description.pack(pady=10)
 
 # Tlačidlo na generovanie viet
 generate_button = tk.Button(root, text="Generovať vety", command=generate_sentences, font=("Arial", 12))
 generate_button.pack(pady=10)
-
-description = tk.Label(root, text="Matej Hric", font=("Arial", 12))
-description.pack(pady=10)
 
 # Výsledok (vety)
 result_text = tk.StringVar()
